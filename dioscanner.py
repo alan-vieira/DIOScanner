@@ -21,9 +21,9 @@ if menu == "1":
     scanner.scan(ip, '1-1024', '-v -sS')
     print(scanner.scaninfo())
     print("Status do IP: ", scanner[ip].state())
-    print(scanner[ip].allprotocols())
+    print(scanner[ip].all_protocols())
     print("")
-    print("Portas Abertas: ", scanner[ip]['tcp'].key())
+    print("Portas Abertas: ", scanner[ip]['tcp'].keys())
 elif menu == "2":
     print("Versão do Nmap: ", scanner.nmap_version())
     scanner.scan(ip, '1-1024', '-v -sU')
@@ -35,6 +35,7 @@ elif menu == "2":
 elif menu == "3":
     print("Versão do Nmap: ", scanner.nmap_version())
     scanner.scan(ip, '1-1024', '-v -sC')
+    print(scanner.scaninfo())
     print("Status do IP: ", scanner[ip].state())
     print(scanner[ip].all_protocols())
     print("")
